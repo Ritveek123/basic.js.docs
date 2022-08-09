@@ -29,6 +29,32 @@
     <p>}</p>
     <p>setBackground(canvas, "gray");</p>
     <p>loop(update);</p>
+    <h1>Creating a player</h1>
+    <hr>
+    <h2>1. creating a box</h2>
+    <p>To create a box we have a function called createSquare() which takes 7 parameters name, w, h, x, y, display, color.</p>
+    <p>we know the the use of name and display. w is for width, h is for height, x is for x position, y is for y position</p>
+    <p>and lastly color is to set color for box and here is the code: </p>
+    <p>let box = createSquare("box", 40, 40, 20, 90, canvas, "red");</p>
+    <h2>2. loading a image and displaying it to the canvas</h2>
+    <p>Displaying square isn't fun so we should display some images, To do that we have a function called loadImage()</p>
+    <p> which takes 7 parameters name, img, x, y, w, h, display. I am not going to explain name, x, y, w, h, display. </p>
+    <p>img is the path of the image that you want. here is the code</p>
+    <p>let img = loadImage(".img", "test.png", 80, 40, 40, 40, canvas);</p>
+    <h2>3. replacing the image</h2>
+    <p>To replace the image we have a function called replaceImage() which takes 2 parameters name, image. But here the name</p>
+    <p>is the name of the image you loaded and image is the path of the image you want to replace with. here is the code: </p>
+    <p>replaceImage(img, "test(1).png")</p>
+    <p>the whole code till now:</p>
+    <p>let canvas = createCanvas("canvas", 400, 400, body);</p>
+    <p>let box = createSquare("box", 40, 40, 20, 90, canvas, "red");</p>
+    <p>let img = loadImage(".img", "test.png", 80, 40, 40, 40, canvas);</p>
+    <p>replaceImage(img, "test(1).png")</p>
+    <p>function update(){</p>
+    <p> </p>
+    <p>}</p>
+    <p>setBackground(canvas, "gray");</p>
+    <p>loop(update);</p>
     <hr>
     <h5>The rest of the documentation is still in devlopment.</h5>
     <hr>
