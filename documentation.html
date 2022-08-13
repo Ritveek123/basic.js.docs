@@ -29,6 +29,7 @@
     <p>}</p>
     <p>setBackground(canvas, "gray");</p>
     <p>loop(update);</p>
+    <hr>
     <h1>Creating a player</h1>
     <hr>
     <h2>1. creating a box</h2>
@@ -52,6 +53,54 @@
     <p>replaceImage(img, "test(1).png")</p>
     <p>function update(){</p>
     <p> </p>
+    <p>}</p>
+    <p>setBackground(canvas, "gray");</p>
+    <p>loop(update);</p>
+    <hr>
+    <h1>Moving our player</h1>
+    <hr>
+    <h2>1. Detecting wasd key</h2>
+    <p>To detect wasd keys we have a function called controller(); but firstly there is an array called state which has 4</p>
+    <p>boolen objects which all are set to false first object is set to true when w key is pressed, second is when s is </p>
+    <p>pressed, third is when a is pressed, fourth is when d is pressed. So back to controller this function set the objects </p>
+    <p>of state array. Then we should add a eventListener to do certain action as the control keys are pressed and here is the code</p>
+    <p>controller();</p>
+    <p>window.addEventListener("keydown", function (ev){</p>
+    <p> if (state[0] == true){</p>
+    <p>     console.log("Hello World!");</p>
+    <p> }</p>
+    <p>})</p>
+    <h2>2. moving our player</h2>
+    <p>To move our player we have 2 functions called setX(); and setY(); which takes two parameters target, x or y finally just</p>
+    <p>combine the controls key detection code and this setX and setY function to move our player but we should have a variable </p>
+    <p>called velocity which is the speed of player and here is the final code till now: </p>
+    <p>let canvas = createCanvas("canvas", 400, 400, body);</p>
+    <p>let box = createSquare("box", 40, 40, 20, 90, canvas, "red");</p>
+    <p>let boxX = 20;</p>
+    <p>let boxY = 90;</p>
+    <p>let velocity = 10;</p>
+    <p>let img = loadImage(".img", "test.png", 80, 40, 40, 40, canvas);</p>
+    <p>replaceImage(img, "test(1).png")</p>
+    <p>function update(){</p>
+    <p> controller();</p>
+    <p> window.addEventListener("keydown", function (ev){</p>
+    <p>     if (state[0] == true){</p>
+    <p>         boxY = boxY - velocity;</p>
+    <p>         setY(box, boxY);</p>
+    <p>     }</p>
+    <p>     if (state[1] == true){</p>
+    <p>         boxY = boxY + velocity;</p>
+    <p>         setY(box, boxY);</p>
+    <p>     }</p>
+    <p>     if (state[2] == true){</p>
+    <p>         boxX = boxX - velocity;</p>
+    <p>         setX(box, boxX);</p>
+    <p>     }</p>
+    <p>     if (state[3] == true){</p>
+    <p>         boxX = boxX + velocity;</p>
+    <p>         setX(box, boxX);</p>
+    <p>     }</p>
+    <p> })</p>
     <p>}</p>
     <p>setBackground(canvas, "gray");</p>
     <p>loop(update);</p>
